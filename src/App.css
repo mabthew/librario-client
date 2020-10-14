@@ -1,0 +1,28 @@
+body {
+    font-size: 18px;
+    color: #004d40;
+}
+
+.App {
+    background-color: white;
+    height: 100vh;
+}
+
+.nav-wrapper {
+    background-color: white;
+}
+
+.book-container {
+    height: 20vh;
+    padding: 10rem;
+}
+
+.btn {
+    color: #004d40;
+}
+/* 
+
+darker teal: 004d40
+lighter teal: 00897b
+
+*/

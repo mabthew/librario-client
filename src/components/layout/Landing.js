@@ -11,12 +11,11 @@ class Landing extends Component {
               Welcome to {" "}
               <span style={{ fontFamily: "monospace" }}>librario</span>!
             </h4>
-            <p className="flow-text grey-text text-darken-1">
-
+            <p className="flow-text">
               Join the librario community to find and share books with book lovers across the world.
             </p>
             <br />
-            <div className="col s6">
+            <div className="col s3 offset-s3">
               <Link
                 to="/register"
                 style={{
@@ -24,12 +23,12 @@ class Landing extends Component {
                   borderRadius: "3px",
                   letterSpacing: "1.5px"
                 }}
-                className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                className="btn btn-large waves-effect waves-light hoverable teal lighten-2 white-text"
               >
                 Register
               </Link>
             </div>
-            <div className="col s6">
+            <div className="col s3">
               <Link
                 to="/login"
                 style={{
@@ -37,14 +36,14 @@ class Landing extends Component {
                   borderRadius: "3px",
                   letterSpacing: "1.5px"
                 }}
-                className="btn btn-large btn-flat waves-effect white black-text"
+                className="btn btn-large waves-effect waves-light hoverable white"
               >
                 Log In
               </Link>
             </div>
           </div>
         </div>
-      </div>
+      </div >
     );
   }
 }

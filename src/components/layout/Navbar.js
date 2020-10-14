@@ -12,17 +12,17 @@ class Navbar extends Component {
 
   render() {
     const { user } = this.props.auth;
-    console.log(user)
     return (
       <div className="navbar-fixed">
-        <nav className="z-depth-0">
-          <div className="nav-wrapper white">
+        <nav className="z-depth-1">
+          <div className="nav-wrapper">
             <Link
               to="/"
               style={{
-                fontFamily: "monospace"
+                fontFamily: "monospace",
+                color: "#004d40"
               }}
-              className="col s5 brand-logo center black-text"
+              className="col s5 brand-logo center"
             >
               librario
             </Link>
@@ -41,7 +41,7 @@ class Navbar extends Component {
                             borderRadius: "3px",
                             letterSpacing: "1.5px"
                           }}
-                          className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                          className="btn btn-large waves-effect waves-light hoverable teal lighten-2 white-text"
                         >
                           Register
                         </Link>
@@ -53,7 +53,7 @@ class Navbar extends Component {
                             borderRadius: "3px",
                             letterSpacing: "1.5px"
                           }}
-                          className="btn btn-large btn-flat waves-effect white black-text"
+                          className="btn btn-large waves-effect waves-light hoverable white"
                         >
                           Log In
                         </Link>
@@ -67,11 +67,10 @@ class Navbar extends Component {
                           borderRadius: "3px",
                           letterSpacing: "1.5px"
                         }}
-                        className="btn btn-large btn-flat waves-effect white black-text"
+                        className="btn btn-large waves-effect waves-light hoverable white"
                         onClick={this.onLogoutClick}
-
                       >
-                        Logout
+                        Log out
                       </div>
                     )
                 }
