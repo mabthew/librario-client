@@ -14,7 +14,7 @@ class Navbar extends Component {
     const { user } = this.props.auth;
     return (
       <div className="navbar-fixed">
-        <nav className="z-depth-1">
+        <nav>
           <div className="nav-wrapper">
             <Link
               to="/"
@@ -26,60 +26,64 @@ class Navbar extends Component {
             >
               librario
             </Link>
-            <ul className="right">
-              <li>
-                {
-                  user.id === undefined
-                    ?
-                    (
-                      <div>
-
-                        <Link
-                          to="/register"
-                          style={{
-                            width: "140px",
-                            borderRadius: "3px",
-                            letterSpacing: "1.5px"
-                          }}
-                          className="btn btn-large waves-effect waves-light hoverable teal lighten-2 white-text"
-                        >
-                          Register
-                        </Link>
-
-                        <Link
-                          to="/login"
-                          style={{
-                            width: "140px",
-                            borderRadius: "3px",
-                            letterSpacing: "1.5px"
-                          }}
-                          className="btn btn-large waves-effect waves-light hoverable white"
-                        >
-                          Log In
-                        </Link>
-                      </div>
-                    )
-                    :
-                    (
-                      <div
+            {
+              user.id === undefined
+                ?
+                (
+                  <ul className="right hide-on-med-and-down">
+                    <li> <button className="dropdown-trigger hide href-button" data-target="dropdown"><i className="large material-icons teal-text center">person</i></button></li>
+                    <li>
+                      <Link
+                        to="/register"
+                        style={{
+                          width: "140px",
+                          borderRadius: "3px",
+                          letterSpacing: "1.5px"
+                        }}
+                        className="btn btn-large waves-effect waves-light hoverable teal lighten-2 white-text"
+                      >
+                        Register
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/login"
                         style={{
                           width: "140px",
                           borderRadius: "3px",
                           letterSpacing: "1.5px"
                         }}
                         className="btn btn-large waves-effect waves-light hoverable white"
-                        onClick={this.onLogoutClick}
                       >
-                        Log out
-                      </div>
-                    )
-                }
+                        Log In
+                      </Link>
+                    </li>
+                  </ul>
+                )
+                :
+                (
+                  <ul className="right hide-on-med-and-down">
+                    <li> <button className="dropdown-trigger href-button" data-target="dropdown"><i className="large material-icons teal-text center">person</i></button></li>
+                  </ul>
+                )
+            }
+            <ul id="dropdown" className="dropdown-content">
+              <li>
+                <p>{user.name}</p>
+              </li>
+              <li>
+                <a href="/dashboard">Dashboard</a>
+              </li>
+              <li>
+                <a href="/profile">My Account</a>
+              </li>
+              <li onClick={this.onLogoutClick}>
+                <button className="href-button">Log out</button>
               </li>
             </ul>
-
           </div>
         </nav>
-      </div>
+      </div >
     );
   }
 }
