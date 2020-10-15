@@ -8,39 +8,40 @@ class Search extends Component {
     constructor() {
         super();
         this.state = {
-            query: '',
             books: [],
-            results: []
+            results: [],
         };
-
-        this.handleChange = this.handleChange.bind(this);
+        this.timeout = 0;
     }
 
-    handleChange(e) {
-        const query = e.target.value;
-        this.setState({ query });
+    doSearch(evt) {
+        var query = evt.target.value;
 
-        if (query !== '') {
-            books.search(query, (error, results) => {
-                if (!error) {
-                    console.log(results);
-                    this.setState({ results });
-                } else {
-                    console.log(error);
-                }
-            });
-        } else {
-            this.setState({ results: [] });
-        }
+        // only search after 300ms w/o input
+        if (this.timeout) clearTimeout(this.timeout);
+
+        this.timeout = setTimeout(() => {
+
+            if (query !== '') {
+                books.search(query, (error, results) => {
+                    if (!error) {
+                        this.setState({ results });
+                    } else {
+                        console.log(error);
+                    }
+                });
+            } else {
+                this.setState({ results: [] });
+            }
+        }, 200);
     }
 
     render() {
-        const { query } = this.state;
         return (
             <div className="search-container">
                 <div className="row">
-                    <div className="col s6 offset-s2">
-                        <input className="search-input" type="text" value={query} onChange={this.handleChange} placeholder="Search books.."></input>
+                    <div className="col s8 offset-s2">
+                        <input className="search-input" id="search-input" type="text" onChange={evt => this.doSearch(evt)} aplaceholder="Search books.."></input>
                         <Suggestions results={this.state.results} ></Suggestions>
                     </div>
                 </div>

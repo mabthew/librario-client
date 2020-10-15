@@ -29,7 +29,15 @@ class Navbar extends Component {
               >
                 librario
             </Link>
-              <a href="/#" data-target="mobile" className="sidenav-trigger"><i className="large material-icons teal-text">menu</i></a>
+              {
+                user.id === undefined
+                  ?
+                  ''
+                  :
+                  (
+                    <a href="/#" data-target="mobile" className="sidenav-trigger"><i className="large material-icons teal-text">menu</i></a>
+                  )
+              }
               {
                 user.id === undefined
                   ?

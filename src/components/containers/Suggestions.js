@@ -1,9 +1,6 @@
 import React from 'react'
 
 const Suggestions = (props) => {
-    props.results.forEach(element => {
-        console.log(element)
-    });
     const options = props.results.map(book => (
         <li key={book.id}>
             <div className="row suggestion">
