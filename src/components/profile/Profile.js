@@ -29,7 +29,7 @@ class Profile extends Component {
                 <div className="divider"></div>
                 <div className="account-container">
                     <div className="row">
-                        <div className="col s3 offset-s1">Email: {accountInfo.email}</div>
+                        <div className="col s3 offset-s1">email: {accountInfo.email}</div>
                     </div>
                 </div>
             </div>

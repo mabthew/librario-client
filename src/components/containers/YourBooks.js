@@ -24,7 +24,7 @@ class YourBooks extends Component {
                     books.length === 0
                         ?
                         (
-                            <div>
+                            <div className="center">
                                 You have no books in your library yet. Add books you've read or want to read by searching above!
                             </div>
                         )

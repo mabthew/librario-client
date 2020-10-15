@@ -1,5 +1,10 @@
+/* Common stuff */
+html {
+    font-size: 62.5%;
+}
+
 body {
-    font-size: 18px;
+    font-size: 1.8rem;
     color: #004d40;
 }
 
@@ -8,23 +13,31 @@ body {
     height: 100vh;
 }
 
-.nav-wrapper {
-    background-color: white;
-}
-
-.book-container {
-    height: 20vh;
-    padding: 10rem;
-}
-
 .btn {
     color: #004d40;
+}
+
+@media screen and (max-width: 700px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+/* Book stuff */
+.book-container {
+  
+}
+
+
+/* Navbar stuff */
+.nav-wrapper {
+    background-color: white;
 }
 
 .dropdown-content {
     top: 100% !important;
     width: 200px !important;
-    font-size: 16px;
+    font-size: 1.6rem;
     height: auto !important;
 }
 
@@ -42,22 +55,23 @@ body {
     padding: 0 0 0 10px;
 }
 
-.dropdown-content li:hover {
-    background-color: white;
-    cursor: default;
+li button i {
+    margin: 0 20px 0 !important;
 }
 
-.divider {
-    width: 90%;
-    margin: auto;
+#mobile-href-button{
+    color: rgba(0,0,0,0.87);
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 32px;
 }
 
+
+/* Account stuff */
 .account-container {
-    /* width: 85%;
-    margin: auto;
-    border: 1px solid rgba(0, 137, 123, 0.5);
-    border-radius: 3px;
-    padding: 20px; */
     padding-top: 20px;
 }
 
@@ -67,17 +81,50 @@ body {
     cursor: pointer;
     padding: 0 0 0 10px;
     line-height: 50px;
-    color: #26a69a;
+    color: #00897b;
 }
 
-.dropdown-content li:hover{
-    background-color: rgba(0,0,0,0.1);
-    cursor: pointer;
+.plaintext:hover {
+    background-color: white !important;
+    cursor: default;
+}
+
+
+/* Search stuff */
+
+.search-container {
+    margin-top: 20px;
+}
+
+
+/* Suggestion stuff */
+.suggestion {
+    min-height: 100px;
+    max-height: 200px;
+    overflow: hidden;
+    margin-bottom: 0px;
+}
+
+.thumbnail {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.book-title {
+    font-weight: bold;
+    margin: 20px 0 0;
+}
+
+.book-author {
+    font-size: 1.4rem;
+    margin: 10px 0 0;
 }
 
 /* 
-
 darker teal: 004d40 ---> rgba(0, 137, 123, 1)
 lighter teal: 00897b
-
 */
