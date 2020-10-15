@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { createBrowserHistory } from "history";
+
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 
@@ -14,6 +16,8 @@ import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import Profile from "./components/profile/Profile";
+import Book from "./components/layout/Book";
+import history from './history'
 
 import "./App.css";
 
@@ -36,11 +40,12 @@ if (localStorage.jwtToken) {
     window.location.href = "./login";
   }
 }
+
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router>
+        <Router history={history}>
           <div className="App">
             <Navbar />
             <Route exact path="/" component={Landing} />
@@ -49,6 +54,7 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/profile" component={Profile} />
+              <PrivateRoute exact path="/book/:id" component={Book} />
             </Switch>
           </div>
         </Router>

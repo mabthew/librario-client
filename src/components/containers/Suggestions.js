@@ -1,23 +1,36 @@
 import React from 'react'
+import history from '../../history'
 
 const Suggestions = (props) => {
     const options = props.results.map(book => (
-        <li key={book.id}>
+        <li key={book.id} onClick={() => history.push(`/book/${book.id}`)}>
             <div className="row suggestion">
                 <div className="col s3">
-                    <img className="thumbnail" src={book.thumbnail} alt="book thumbnail"></img>
+                    {
+                        book.thumbnail === undefined
+                            ?
+                            ''
+                            :
+                            (
+                                <img className="thumbnail" src={book.thumbnail} alt="book thumbnail"></img>
+                            )
+                    }
+
                 </div>
                 <div className="col s9">
-                    <p className="book-title" >
+                    <p className="suggestion-title" >
                         {
-                            book.title.length > 50
+                            book.title
                                 ?
-                                (book.title.substr(0, 50) + '...')
-                                :
-                                (book.title)
+                                book.title.length > 50
+                                    ?
+                                    (book.title.substr(0, 50) + '...')
+                                    :
+                                    (book.title)
+                                : ''
                         }
                     </p>
-                    <p className="book-author" >
+                    <p className="suggestion-author" >
                         {
                             book.authors
                                 ? book.authors[0].length > 50

@@ -41,7 +41,7 @@ class Search extends Component {
             <div className="search-container">
                 <div className="row">
                     <div className="col s8 offset-s2">
-                        <input className="search-input" id="search-input" type="text" onChange={evt => this.doSearch(evt)} aplaceholder="Search books.."></input>
+                        <input className="search-input" type="text" onChange={evt => this.doSearch(evt)} placeholder="Search books.."></input>
                         <Suggestions results={this.state.results} ></Suggestions>
                     </div>
                 </div>

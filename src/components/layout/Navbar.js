@@ -87,7 +87,7 @@ class Navbar extends Component {
                   <a href="/dashboard">Dashboard</a>
                 </li>
                 <li>
-                  <a href="/profile">My Account</a>
+                  <a href="/profile">Account Settings</a>
                 </li>
                 <li>
                   <a href="/login" onClick={this.onLogoutClick}>Log out</a>
@@ -104,7 +104,7 @@ class Navbar extends Component {
             <a href="/dashboard">Dashboard</a>
           </li>
           <li>
-            <a href="/profile">My Account</a>
+            <a href="/profile">Account Settings</a>
           </li>
           <li className="sidenav-close">
             <a onClick={this.onLogoutClick} href="/login" >Log out</a>

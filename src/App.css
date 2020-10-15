@@ -105,6 +105,12 @@ li button i {
     margin-bottom: 0px;
 }
 
+.suggestion:hover {
+    background-color: rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+
 .thumbnail {
     max-width: 100%;
     height: auto;
@@ -114,14 +120,21 @@ li button i {
     margin: auto;
 }
 
-.book-title {
+.suggetion-title {
     font-weight: bold;
     margin: 20px 0 0;
 }
 
-.book-author {
+.suggestion-author {
     font-size: 1.4rem;
     margin: 10px 0 0;
+}
+
+
+/* Book stuff */
+.book-container {
+    margin-top: 20px;
+    text-align: center;
 }
 
 /* 
